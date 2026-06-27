@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-clr-olive: #6B7B3A;
+  --color-clr-olive-dark: #4A5A28;
+  --color-clr-olive-light: #8B9B5A;
+  --color-clr-sage: #A3B18A;
+  --color-clr-cream: #FAF6F0;
+  --color-clr-cream-dark: #F0EBE3;
+  --color-clr-warm-white: #FEFCF8;
+  --color-clr-gold: #C8A96E;
+  --color-clr-gold-dark: #A68B52;
+  --color-clr-gold-light: #D4BC8B;
+  --color-clr-charcoal: #2C2C2C;
+  --color-clr-dark: #1A1A1A;
+  
+  --font-body: "Inter", sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-accent: "Cormorant Garamond", serif;
+}
+
+:root {
+  --bg: 40 33% 98%; /* HSL for #FEFCF8 */
+  --surface: 42 25% 96%; /* HSL for #FAF6F0 */
+  --text: 0 0% 24%; /* HSL for #3D3D3D */
+  --muted: 0 0% 42%; /* HSL for #6B6B6B */
+  --stroke: 0 0% 90%;
+  --accent: 40 33% 98%;
+}
+
+/* Custom Accent Gradient */
+.accent-gradient {
+  background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+}
+
+.accent-border-hover:hover {
+  border-image: linear-gradient(90deg, #f59e0b 0%, #d97706 100%) 1;
+}
+
+html,
+body,
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(var(--bg));
+  color: hsl(var(--text));
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+/* Keyframe Animations */
+@keyframes scroll-down {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(200%); opacity: 0; }
+}
+
+@keyframes role-fade-in {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 1.5s ease-in-out infinite;
+}
+
+.animate-role-fade-in {
+  animation: role-fade-in 0.4s ease-out forwards;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* Halftone Overlay Effect */
+.halftone-overlay {
+  background-image: radial-gradient(circle, #000 1.2px, transparent 1.2px);
+  background-size: 6px 6px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--bg));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--stroke));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Blur reveal utility */
+.blur-reveal {
+  filter: blur(10px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blur-reveal.active {
+  filter: blur(0);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom premium styles for $1M site look */
+.glass-shield {
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.25) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.04), 0 0 100px rgba(255, 255, 255, 0.5) inset;
+}
+
+.scale-102:hover {
+  transform: scale(1.02);
+}
+
+.scale-98 {
+  transform: scale(0.98);
+}
+

@@ -89,28 +89,40 @@ export default function SelectedWorks() {
               onClick={() => setSelectedProject(project)}
               className={`${project.span} ${project.aspect} relative bg-clr-cream-dark border border-clr-gold/10 rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end min-h-[340px]`}
             >
+              {/* Top-Right Glowing Partner Tag Badge */}
+              <div className="absolute top-4 right-4 z-10 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-2 transition-all duration-300 group-hover:bg-black/80">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-clr-gold opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-clr-gold"></span>
+                </span>
+                <span className="text-[9px] font-bold text-white uppercase tracking-widest font-body">
+                  {index % 2 === 0 ? "Tata Power Partner" : "Waaree Elite Partner"}
+                </span>
+              </div>
+
               {/* Background Image */}
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
+                className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-105 group-hover:rotate-[0.5deg] transition-transform duration-[1200ms] ease-out"
               />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent opacity-100 transition-opacity duration-500" />
+              {/* Dark Overlay (Ensuring readability underneath the card) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-100" />
 
-              {/* Text content revealed on hover */}
-              <div className="relative z-10 p-8 select-text">
-                <span className="font-accent text-clr-gold text-sm tracking-wider block mb-2 transform translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              {/* Uniform Glassmorphic bottom info container */}
+              <div className="absolute bottom-4 left-4 right-4 z-10 bg-black/55 backdrop-blur-md border border-white/10 p-5 rounded-2xl transition-all duration-500 group-hover:bg-clr-olive/90 group-hover:border-clr-gold/30 group-hover:translate-y-[-4px]">
+                <span className="font-accent text-clr-gold group-hover:text-white/80 text-xs tracking-wider block mb-1 transition-colors duration-300">
                   {project.subtitle}
                 </span>
-                <h3 className="font-display text-white text-2xl font-bold transform translate-y-3 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75">
-                  {project.title}
+                <h3 className="font-display text-white text-lg md:text-xl font-bold leading-tight flex items-center justify-between">
+                  <span>{project.title}</span>
+                  <span className="text-clr-gold group-hover:text-white transition-all duration-300 transform group-hover:translate-x-1">→</span>
                 </h3>
               </div>
 
               {/* Glow border line on active cards */}
-              <div className="absolute inset-0 border-2 border-clr-gold/0 group-hover:border-clr-gold/45 rounded-2xl pointer-events-none transition-all duration-500" />
+              <div className="absolute inset-0 border border-white/0 group-hover:border-clr-gold/45 rounded-2xl pointer-events-none transition-all duration-500" />
 
             </motion.div>
           ))}

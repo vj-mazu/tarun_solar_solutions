@@ -49,42 +49,42 @@ export default function BrandSlider() {
           <div className="flex gap-14 items-center px-6">
             
             {/* Tata Power Logo Card */}
-            <div className="flex items-center justify-between gap-8 bg-white border border-gray-100/90 p-8 rounded-[28px] w-[420px] h-[130px] shadow-sm hover:shadow-md hover:border-clr-gold/30 hover:scale-102 transition-all duration-300">
-              <img src={tataLogo} alt="Tata Power Solar" className="h-20 w-auto max-w-[150px] object-contain rounded-md" />
-              <div className="text-right font-body flex-1 pl-6 border-l border-gray-100">
-                <span className="text-[10px] font-extrabold text-clr-gold uppercase tracking-widest block mb-0.5">Authorized</span>
-                <span className="text-black font-black text-sm block leading-tight">TATA POWER</span>
-                <span className="text-gray-400 text-[8px] font-bold block uppercase tracking-widest mt-0.5">SOLAROOF</span>
+            <div className="flex items-center justify-between gap-4 bg-white border border-gray-100/90 p-4 sm:p-8 rounded-[20px] sm:rounded-[28px] w-[290px] sm:w-[420px] h-[100px] sm:h-[130px] shadow-sm hover:shadow-md hover:border-clr-gold/30 hover:scale-102 transition-all duration-300">
+              <img src={tataLogo} alt="Tata Power Solar" className="h-12 sm:h-20 w-auto max-w-[100px] sm:max-w-[150px] object-contain rounded-md" />
+              <div className="text-right font-body flex-1 pl-3 sm:pl-6 border-l border-gray-100">
+                <span className="text-[8px] sm:text-[10px] font-extrabold text-clr-gold uppercase tracking-widest block mb-0.5">Authorized</span>
+                <span className="text-black font-black text-xs sm:text-sm block leading-tight">TATA POWER</span>
+                <span className="text-gray-400 text-[7px] sm:text-[8px] font-bold block uppercase tracking-widest mt-0.5">SOLAROOF</span>
               </div>
             </div>
 
             {/* Waaree Logo Card */}
-            <div className="flex items-center justify-between gap-8 bg-white border border-gray-100/90 p-8 rounded-[28px] w-[420px] h-[130px] shadow-sm hover:shadow-md hover:border-clr-gold/30 hover:scale-102 transition-all duration-300">
-              <img src={waareeLogo} alt="Waaree Solar" className="h-20 w-auto max-w-[170px] object-contain rounded-md" />
-              <div className="text-right font-body flex-1 pl-6 border-l border-gray-100">
-                <span className="text-[10px] font-extrabold text-clr-gold uppercase tracking-widest block mb-0.5">Elite Partner</span>
-                <span className="text-[#0f529f] font-black text-sm block leading-tight">WAAREE</span>
-                <span className="text-gray-400 text-[8px] font-bold block uppercase tracking-widest mt-0.5">ONE WITH THE SUN</span>
+            <div className="flex items-center justify-between gap-4 bg-white border border-gray-100/90 p-4 sm:p-8 rounded-[20px] sm:rounded-[28px] w-[290px] sm:w-[420px] h-[100px] sm:h-[130px] shadow-sm hover:shadow-md hover:border-clr-gold/30 hover:scale-102 transition-all duration-300">
+              <img src={waareeLogo} alt="Waaree Solar" className="h-12 sm:h-20 w-auto max-w-[110px] sm:max-w-[170px] object-contain rounded-md" />
+              <div className="text-right font-body flex-1 pl-3 sm:pl-6 border-l border-gray-100">
+                <span className="text-[8px] sm:text-[10px] font-extrabold text-clr-gold uppercase tracking-widest block mb-0.5">Elite Partner</span>
+                <span className="text-[#0f529f] font-black text-xs sm:text-sm block leading-tight">WAAREE</span>
+                <span className="text-gray-400 text-[7px] sm:text-[8px] font-bold block uppercase tracking-widest mt-0.5">ONE WITH THE SUN</span>
               </div>
             </div>
 
             {/* Tata Power Logo Card (Repeated) */}
-            <div className="flex items-center justify-between gap-8 bg-white border border-gray-100/90 p-8 rounded-[28px] w-[420px] h-[130px] shadow-sm hover:shadow-md hover:border-clr-gold/30 hover:scale-102 transition-all duration-300">
-              <img src={tataLogo} alt="Tata Power Solar" className="h-20 w-auto max-w-[150px] object-contain rounded-md" />
-              <div className="text-right font-body flex-1 pl-6 border-l border-gray-100">
-                <span className="text-[10px] font-extrabold text-clr-gold uppercase tracking-widest block mb-0.5">Official Partner</span>
-                <span className="text-black font-black text-sm block leading-tight">TATA POWER</span>
-                <span className="text-gray-400 text-[8px] font-bold block uppercase tracking-widest mt-0.5">SOLAROOF</span>
+            <div className="flex items-center justify-between gap-4 bg-white border border-gray-100/90 p-4 sm:p-8 rounded-[20px] sm:rounded-[28px] w-[290px] sm:w-[420px] h-[100px] sm:h-[130px] shadow-sm hover:shadow-md hover:border-clr-gold/30 hover:scale-102 transition-all duration-300">
+              <img src={tataLogo} alt="Tata Power Solar" className="h-12 sm:h-20 w-auto max-w-[100px] sm:max-w-[150px] object-contain rounded-md" />
+              <div className="text-right font-body flex-1 pl-3 sm:pl-6 border-l border-gray-100">
+                <span className="text-[8px] sm:text-[10px] font-extrabold text-clr-gold uppercase tracking-widest block mb-0.5">Official Partner</span>
+                <span className="text-black font-black text-xs sm:text-sm block leading-tight">TATA POWER</span>
+                <span className="text-gray-400 text-[7px] sm:text-[8px] font-bold block uppercase tracking-widest mt-0.5">SOLAROOF</span>
               </div>
             </div>
 
             {/* Waaree Logo Card (Repeated) */}
-            <div className="flex items-center justify-between gap-8 bg-white border border-gray-100/90 p-8 rounded-[28px] w-[420px] h-[130px] shadow-sm hover:shadow-md hover:border-clr-gold/30 hover:scale-102 transition-all duration-300">
-              <img src={waareeLogo} alt="Waaree Solar" className="h-20 w-auto max-w-[170px] object-contain rounded-md" />
-              <div className="text-right font-body flex-1 pl-6 border-l border-gray-100">
-                <span className="text-[10px] font-extrabold text-clr-gold uppercase tracking-widest block mb-0.5">Elite Partner</span>
-                <span className="text-[#0f529f] font-black text-sm block leading-tight">WAAREE</span>
-                <span className="text-gray-400 text-[8px] font-bold block uppercase tracking-widest mt-0.5">ONE WITH THE SUN</span>
+            <div className="flex items-center justify-between gap-4 bg-white border border-gray-100/90 p-4 sm:p-8 rounded-[20px] sm:rounded-[28px] w-[290px] sm:w-[420px] h-[100px] sm:h-[130px] shadow-sm hover:shadow-md hover:border-clr-gold/30 hover:scale-102 transition-all duration-300">
+              <img src={waareeLogo} alt="Waaree Solar" className="h-12 sm:h-20 w-auto max-w-[110px] sm:max-w-[170px] object-contain rounded-md" />
+              <div className="text-right font-body flex-1 pl-3 sm:pl-6 border-l border-gray-100">
+                <span className="text-[8px] sm:text-[10px] font-extrabold text-clr-gold uppercase tracking-widest block mb-0.5">Elite Partner</span>
+                <span className="text-[#0f529f] font-black text-xs sm:text-sm block leading-tight">WAAREE</span>
+                <span className="text-gray-400 text-[7px] sm:text-[8px] font-bold block uppercase tracking-widest mt-0.5">ONE WITH THE SUN</span>
               </div>
             </div>
 

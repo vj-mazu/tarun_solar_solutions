@@ -80,8 +80,8 @@ export default function Hero() {
         </AnimatePresence>
       </div>
 
-      {/* Hero Content Area - aligned with comfortable top margin to prevent overlapping the header brand */}
-      <div className="relative z-10 max-w-4xl px-8 md:px-16 lg:px-24 text-left flex flex-col items-start justify-center pt-28 md:pt-36 pb-16">
+      {/* Hero Content Area - aligned with comfortable top margin, with a mobile-only premium glass shield to prevent image overlaps */}
+      <div className="relative z-10 max-w-4xl px-6 md:px-16 lg:px-24 text-left flex flex-col items-start justify-center pt-28 md:pt-36 pb-16 max-md:bg-black/45 max-md:backdrop-blur-md max-md:rounded-[28px] max-md:mx-4 max-md:my-8 max-md:p-6 max-md:border max-md:border-white/10">
         
         {/* Eyebrow badge */}
         <span 

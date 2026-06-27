@@ -34,14 +34,17 @@ export default function Explorations() {
     const containerEl = containerRef.current;
     if (!pinEl || !containerEl) return;
 
-    // Pin the left heading panel
-    const pinTrigger = ScrollTrigger.create({
-      trigger: containerEl,
-      start: "top top",
-      end: "bottom bottom",
-      pin: pinEl,
-      pinSpacing: false
-    });
+    // Pin the left heading panel ONLY on desktop (>= 768px)
+    let pinTrigger = null;
+    if (window.innerWidth >= 768) {
+      pinTrigger = ScrollTrigger.create({
+        trigger: containerEl,
+        start: "top top",
+        end: "bottom bottom",
+        pin: pinEl,
+        pinSpacing: false
+      });
+    }
 
     // Parallax movement for column 1
     let tl1 = null;
@@ -72,7 +75,7 @@ export default function Explorations() {
     }
 
     return () => {
-      pinTrigger.kill();
+      if (pinTrigger) pinTrigger.kill();
       if (tl1) tl1.scrollTrigger?.kill();
       if (tl2) tl2.scrollTrigger?.kill();
     };
@@ -90,7 +93,7 @@ export default function Explorations() {
   return (
     <div 
       ref={containerRef} 
-      className="relative min-h-[220vh] md:min-h-[300vh] bg-transparent border-t border-gray-200/50 flex flex-col md:flex-row select-none"
+      className="relative min-h-[220vh] md:min-h-[300vh] bg-transparent border-t border-gray-200/50 flex flex-col md:flex-row select-none overflow-hidden"
     >
       {/* Column 1: Pinned content */}
       <div className="w-full md:w-1/2 relative h-screen md:h-auto" ref={pinRef}>

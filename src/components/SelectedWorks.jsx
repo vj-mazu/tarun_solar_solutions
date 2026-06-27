@@ -13,7 +13,7 @@ const projects = [
     subtitle: "Tata Solar 5kW Grid-Tied System",
     image: residentialImg,
     span: "md:col-span-7",
-    aspect: "aspect-[16/10]",
+    aspect: "aspect-[4/3] md:aspect-[16/10]",
     desc: "A high-efficiency residential solar infrastructure fitting completed in Karnataka. Engineered utilizing Tata Power Solar Solaroof technology for optimal roof space offset, providing zero-bill energy production with a grid-tied smart net-metering interface."
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     subtitle: "Waaree PERC Half-Cut Cell Fitting",
     image: techDetailImg,
     span: "md:col-span-7",
-    aspect: "aspect-[16/10]",
+    aspect: "aspect-[4/3] md:aspect-[16/10]",
     desc: "Advanced half-cut cells utilizing PERC cell technology for maximal efficiency under high-heat parameters. Fully authorized Waaree solar layout modules verified for 25 years."
   }
 ];
@@ -87,7 +87,7 @@ export default function SelectedWorks() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               onClick={() => setSelectedProject(project)}
-              className={`${project.span} ${project.aspect} relative bg-clr-cream-dark border border-clr-gold/10 rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end min-h-[340px]`}
+              className={`${project.span} ${project.aspect} relative bg-clr-cream-dark border border-clr-gold/10 rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end min-h-[220px] md:min-h-[340px]`}
             >
               {/* Top-Right Glowing Partner Tag Badge */}
               <div className="absolute top-4 right-4 z-10 bg-black/60 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-2 transition-all duration-300 group-hover:bg-black/80">

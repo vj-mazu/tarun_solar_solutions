@@ -93,11 +93,11 @@ export default function Explorations() {
   return (
     <div 
       ref={containerRef} 
-      className="relative min-h-[220vh] md:min-h-[300vh] bg-transparent border-t border-gray-200/50 flex flex-col md:flex-row select-none overflow-hidden"
+      className="relative min-h-0 h-auto pb-16 md:min-h-[300vh] md:pb-0 bg-transparent border-t border-gray-200/50 flex flex-col md:flex-row select-none overflow-hidden"
     >
       {/* Column 1: Pinned content */}
-      <div className="w-full md:w-1/2 relative h-screen md:h-auto" ref={pinRef}>
-        <div className="md:sticky md:top-0 h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24">
+      <div className="w-full md:w-1/2 relative h-auto md:h-auto" ref={pinRef}>
+        <div className="md:sticky md:top-0 h-auto py-12 md:py-0 md:h-screen w-full flex flex-col justify-center px-8 md:px-16 lg:px-24">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-px bg-gray-200" />
             <span className="text-xs text-gray-400 font-semibold uppercase tracking-[0.3em] font-body">Explorations</span>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Zap, Sun, Settings, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { config } from "../config";
-import tataLogo from "../assets/tata_logo.png";
-import waareeLogo from "../assets/waaree_logo.png";
+import tataLogo from "../assets/tata_logo.webp";
+import waareeLogo from "../assets/waaree_logo.webp";
 
 const services = [
   {

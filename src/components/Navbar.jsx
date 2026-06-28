@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { config } from "../config";
-import brandLogo from "../assets/brand_logo.png";
+import brandLogo from "../assets/brand_logo.webp";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,20 +50,8 @@ export default function Navbar() {
           <img 
             src={brandLogo} 
             alt="Tarun Solar Rooftop Logo" 
-            className="h-10 w-auto object-contain rounded-lg" 
+            className="h-14 md:h-18 w-auto object-contain rounded-lg" 
           />
-          <div className="flex flex-col leading-none">
-            <span 
-              className={`font-display font-bold text-xl tracking-[0.2em] transition-colors duration-300 ${
-                isScrolled ? "text-clr-charcoal" : "text-white"
-              }`}
-            >
-              TARUN
-            </span>
-            <span className="font-accent text-[8px] text-clr-gold tracking-[0.3em] uppercase mt-0.5">
-              SOLAR ROOFTOP
-            </span>
-          </div>
         </div>
 
         {/* Nav Links - Vibhuti style horizontal track */}

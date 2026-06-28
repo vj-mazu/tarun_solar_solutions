@@ -3,10 +3,10 @@ import gsap from "gsap";
 import { AnimatePresence, motion } from "framer-motion";
 import { config } from "../config";
 
-import carousel1 from "../assets/hero_carousel_1.png";
-import carousel2 from "../assets/hero_carousel_2.png";
-import carousel3 from "../assets/hero_carousel_3.png";
-import carousel4 from "../assets/hero_carousel_4.png";
+import carousel1 from "../assets/hero_carousel_1.webp";
+import carousel2 from "../assets/hero_carousel_2.webp";
+import carousel3 from "../assets/hero_carousel_3.webp";
+import carousel4 from "../assets/hero_carousel_4.webp";
 
 const carouselImages = [carousel1, carousel2, carousel3, carousel4];
 const roles = ["Residential", "Commercial", "Industrial", "Micro-Grid"];
@@ -85,21 +85,21 @@ export default function Hero() {
         
         {/* Eyebrow badge */}
         <span 
-          className="blur-in block text-[11px] font-bold text-clr-gold uppercase tracking-[0.3em] mb-4 font-accent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+          className="blur-in block text-[11px] font-bold text-clr-gold uppercase tracking-[0.3em] mb-4 font-accent hero-text-shadow"
         >
           Tata Power & Waaree Solar Partners
         </span>
 
         {/* Headline styled with white color and dropshadow to ensure absolute visibility over raw images */}
         <h1 
-          className="name-reveal text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display leading-[1.15] text-white pb-3 mb-6 font-bold select-text drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
+          className="name-reveal text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display leading-[1.15] text-white pb-3 mb-6 font-bold select-text hero-text-shadow"
         >
           Tarun Solar<br />
           <span className="italic text-clr-gold">Rooftop</span>
         </h1>
 
         {/* Dynamic Role Line */}
-        <div className="blur-in text-base md:text-lg text-white/95 font-semibold tracking-wider mb-6 font-body drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+        <div className="blur-in text-base md:text-lg text-white/95 font-semibold tracking-wider mb-6 font-body hero-text-shadow">
           A premium{" "}
           <span 
             key={roleIndex}
@@ -112,7 +112,7 @@ export default function Hero() {
 
         {/* Description */}
         <p 
-          className="blur-in text-xs md:text-sm text-white/85 max-w-lg mb-10 leading-relaxed font-body select-text drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]"
+          className="blur-in text-xs md:text-sm text-white/85 max-w-lg mb-10 leading-relaxed font-body select-text hero-text-shadow"
         >
           Delivering absolute grid autonomy and high-performance clean energy installations. Authorized components backed by 25-year structural warranties.
         </p>
@@ -134,7 +134,7 @@ export default function Hero() {
           </button>
         </div>
 
-        <div className="blur-in mt-6 text-[10px] uppercase font-bold tracking-[0.2em] text-white/60 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+        <div className="blur-in mt-6 text-[10px] uppercase font-bold tracking-[0.2em] text-white/60 hero-text-shadow">
           Direct support: <a href="tel:+917022673119" className="text-clr-gold hover:underline transition-all select-all font-body tracking-wider">+91 70226 73119</a>
         </div>
 

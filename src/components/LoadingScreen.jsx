@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import brandLogo from "../assets/brand_logo.png";
+import brandLogo from "../assets/brand_logo.webp";
 
 const word1 = "TARUN".split("");
 const word2 = "SOLAR".split("");
@@ -64,7 +64,7 @@ export default function LoadingScreen({ onComplete }) {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.0, ease: "easeOut" }}
-          className="h-36 w-auto object-contain rounded-[24px] mb-8 border border-white/15 bg-black/95 px-5 py-3 shadow-2xl"
+          className="h-56 md:h-64 w-auto object-contain rounded-[24px] mb-8 border border-white/15 bg-black/95 px-2 py-2 shadow-2xl"
         />
 
         {/* Top Horizontal Line (Vibhuti style) */}

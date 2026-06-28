@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import tataLogo from "../assets/tata_logo.png";
-import waareeLogo from "../assets/waaree_logo.png";
+import tataLogo from "../assets/tata_logo.webp";
+import waareeLogo from "../assets/waaree_logo.webp";
 
 export default function BrandSlider() {
   const sliderRef = useRef(null);

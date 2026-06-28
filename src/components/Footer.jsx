@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { config } from "../config";
-import brandLogo from "../assets/brand_logo.png";
+import brandLogo from "../assets/brand_logo.webp";
 
 export default function Footer() {
   const marqueeRef = useRef(null);
@@ -60,7 +60,7 @@ export default function Footer() {
         <img 
           src={brandLogo} 
           alt="Tarun Solar Rooftop Logo" 
-          className="h-24 w-auto object-contain rounded-2xl mb-6 bg-black/95 px-5 py-3 border border-white/15 shadow-xl"
+          className="h-40 md:h-48 w-auto object-contain rounded-2xl mb-6 bg-black/95 px-2 py-2 border border-white/15 shadow-xl"
         />
 
         {/* Title */}

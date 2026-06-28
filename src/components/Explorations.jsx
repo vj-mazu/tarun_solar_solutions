@@ -3,10 +3,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { config } from "../config";
 
-import residentialImg from "../assets/residential_solar.png";
-import commercialImg from "../assets/commercial_solar.png";
-import agriculturalImg from "../assets/agricultural_solar.png";
-import techDetailImg from "../assets/solar_tech_detail.png";
+import residentialImg from "../assets/residential_solar.webp";
+import commercialImg from "../assets/commercial_solar.webp";
+import agriculturalImg from "../assets/agricultural_solar.webp";
+import techDetailImg from "../assets/solar_tech_detail.webp";
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);

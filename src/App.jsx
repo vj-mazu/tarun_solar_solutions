@@ -11,9 +11,13 @@ import Explorations from "./components/Explorations";
 import Stats from "./components/Stats";
 import BookingForm from "./components/BookingForm";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const [isLoading, setIsLoading] = useState(!prefersReducedMotion);
 
   return (
     <div className="relative min-h-screen bg-clr-warm-white text-clr-charcoal overflow-x-hidden selection:bg-clr-cream-dark selection:text-black">
@@ -59,6 +63,8 @@ export default function App() {
 
         {/* Vertically Flipped Video Stream Footer */}
         <Footer />
+
+        <WhatsAppButton />
       </motion.div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Calendar, Clock, User, Phone, MessageSquare, Send, CheckCircle2, X } from "lucide-react";
+import { Calendar, Clock, User, Phone, MessageSquare, Send, CheckCircle2, X, Mail } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function BookingForm() {
@@ -22,7 +22,6 @@ export default function BookingForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 1. Double Booking Backend simulation (Save to LocalStorage database)
     const mockId = `TSS-B-${Math.floor(100000 + Math.random() * 900000)}`;
     const currentBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
     const newBooking = {
@@ -36,7 +35,6 @@ export default function BookingForm() {
     setBookingId(mockId);
     setShowSuccess(true);
 
-    // 2. Draft Messages
     const msg = `Booking Details from Website:
 ----------------------------------
 Booking ID: ${mockId}
@@ -47,23 +45,9 @@ Preferred Date: ${formData.date}
 Preferred Time: ${formData.time}
 Message: ${formData.message}`;
 
-    const subject = `Solar Audit Booking [${mockId}] - ${formData.name}`;
-
-    // WhatsApp Redirect URL
     const whatsappUrl = `https://wa.me/917022673119?text=${encodeURIComponent(msg)}`;
-    
-    // Gmail/Email Client Redirect URLs
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@tarunsolarsolutions.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
-    const mailtoUrl = `mailto:hello@tarunsolarsolutions.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
 
-    // Open WhatsApp redirect in new window tab
     window.open(whatsappUrl, "_blank");
-
-    // Open Gmail composer redirect in new tab, and fallback to mailto redirect
-    setTimeout(() => {
-      window.open(gmailUrl, "_blank");
-      window.location.href = mailtoUrl;
-    }, 400);
 
     // Clear form inputs
     setFormData({
@@ -89,7 +73,7 @@ Message: ${formData.message}`;
               <span className="italic text-clr-gold">Solar Feasibility Audit</span>
             </h2>
             <p className="text-xs md:text-sm text-clr-text-light leading-relaxed font-body mb-8 max-w-md">
-              Plan your transition to clean energy with confidence. Fill out the booking form to reserve a slot. The submission will automatically draft your inquiry across WhatsApp and Email simultaneously, while syncing instantly with our local database.
+              Plan your transition to clean energy with confidence. Submit your details to generate a booking reference and open a WhatsApp inquiry with the complete site-audit request.
             </p>
 
             <div className="flex flex-col gap-4 text-xs font-semibold uppercase tracking-wider text-[#999999]">
@@ -114,10 +98,11 @@ Message: ${formData.message}`;
                 
                 {/* Full Name */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Full Name</label>
+                  <label htmlFor="booking-name" className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Full Name</label>
                   <div className="relative">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#999999]" />
                     <input 
+                      id="booking-name"
                       type="text" 
                       name="name"
                       required
@@ -131,13 +116,16 @@ Message: ${formData.message}`;
 
                 {/* Phone Number */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Phone Number</label>
+                  <label htmlFor="booking-phone" className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Phone Number</label>
                   <div className="relative">
                     <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#999999]" />
                     <input 
+                      id="booking-phone"
                       type="tel" 
                       name="phone"
                       required
+                      inputMode="tel"
+                      pattern="[0-9+\-\s()]{8,16}"
                       placeholder="e.g. 70226 73119" 
                       value={formData.phone}
                       onChange={handleChange}
@@ -148,8 +136,9 @@ Message: ${formData.message}`;
 
                 {/* Service Selection */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Solar System Type</label>
+                  <label htmlFor="booking-service" className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Solar System Type</label>
                   <select 
+                    id="booking-service"
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
@@ -164,10 +153,11 @@ Message: ${formData.message}`;
 
                 {/* Date Picker */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Preferred Date</label>
+                  <label htmlFor="booking-date" className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Preferred Date</label>
                   <div className="relative">
                     <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#999999] pointer-events-none" />
                     <input 
+                      id="booking-date"
                       type="date" 
                       name="date"
                       required
@@ -180,10 +170,11 @@ Message: ${formData.message}`;
 
                 {/* Time Picker */}
                 <div className="flex flex-col gap-2 md:col-span-2">
-                  <label className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Preferred Time Slot</label>
+                  <label htmlFor="booking-time" className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Preferred Time Slot</label>
                   <div className="relative">
                     <Clock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#999999] pointer-events-none" />
                     <input 
+                      id="booking-time"
                       type="time" 
                       name="time"
                       required
@@ -196,10 +187,11 @@ Message: ${formData.message}`;
 
                 {/* Message */}
                 <div className="flex flex-col gap-2 md:col-span-2">
-                  <label className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Additional Message</label>
+                  <label htmlFor="booking-message" className="text-[10px] font-bold text-clr-charcoal uppercase tracking-widest font-body">Additional Message</label>
                   <div className="relative">
                     <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-[#999999]" />
                     <textarea 
+                      id="booking-message"
                       name="message"
                       rows="4"
                       required
@@ -243,38 +235,51 @@ Message: ${formData.message}`;
               initial={{ scale: 0.9, y: 15 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 15 }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="booking-success-title"
               className="bg-white max-w-md w-full rounded-[28px] p-8 text-center shadow-2xl relative z-10 border border-clr-gold/10"
             >
               <div className="text-clr-olive flex justify-center mb-5">
                 <CheckCircle2 className="w-16 h-16 stroke-[1.2]" />
               </div>
 
-              <h3 className="font-display text-2xl font-bold text-clr-charcoal mb-2">
-                Booking Database Synced
+              <h3 id="booking-success-title" className="font-display text-2xl font-bold text-clr-charcoal mb-2">
+                Booking Request Ready
               </h3>
               <p className="text-xs text-clr-text-light font-body leading-relaxed mb-6">
-                Your request has been successfully written to the local database and drafted across WhatsApp and Gmail.
+                Your inquiry has been prepared for WhatsApp. Keep this reference number for follow-up with the Tarun Solar Rooftop team.
               </p>
 
               <div className="bg-gray-50 border border-gray-100/90 rounded-2xl p-4 mb-8 text-left font-body">
                 <div className="flex justify-between text-[10px] text-gray-400 font-bold uppercase mb-1">
-                  <span>Database Status</span>
-                  <span className="text-clr-olive">Synced ✓</span>
+                  <span>Inquiry Status</span>
+                  <span className="text-clr-olive">Prepared</span>
                 </div>
                 <div className="text-xs text-clr-charcoal font-semibold">
                   Ticket ID: <span className="font-mono text-clr-gold">{bookingId}</span>
                 </div>
               </div>
 
-              <button
-                onClick={() => setShowSuccess(false)}
-                className="w-full rounded-full py-3 bg-clr-charcoal text-white hover:bg-black text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
-              >
-                Done
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`mailto:hello@tarunsolarsolutions.com?subject=${encodeURIComponent(`Solar Audit Booking [${bookingId}]`)}&body=${encodeURIComponent(`Please follow up on booking reference ${bookingId}.`)}`}
+                  className="flex flex-1 items-center justify-center gap-2 rounded-full py-3 border border-clr-gold/30 text-clr-charcoal hover:border-clr-gold text-xs font-bold uppercase tracking-wider transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  Email
+                </a>
+                <button
+                  onClick={() => setShowSuccess(false)}
+                  className="flex-1 rounded-full py-3 bg-clr-charcoal text-white hover:bg-black text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer"
+                >
+                  Done
+                </button>
+              </div>
 
               <button 
                 onClick={() => setShowSuccess(false)}
+                aria-label="Close booking confirmation"
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-250 flex items-center justify-center text-gray-400 hover:text-black cursor-pointer"
               >
                 <X className="w-4 h-4" />

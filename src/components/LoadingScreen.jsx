@@ -15,7 +15,7 @@ export default function LoadingScreen({ onComplete }) {
       setTimeout(() => {
         onComplete();
       }, 900);
-    }, 2800);
+    }, 1300);
 
     return () => clearTimeout(timeout);
   }, [onComplete]);
@@ -65,6 +65,9 @@ export default function LoadingScreen({ onComplete }) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.0, ease: "easeOut" }}
           className="h-56 md:h-64 w-auto object-contain rounded-[24px] mb-8 border border-white/15 bg-black/95 px-2 py-2 shadow-2xl"
+          width="256"
+          height="256"
+          decoding="async"
         />
 
         {/* Top Horizontal Line (Vibhuti style) */}

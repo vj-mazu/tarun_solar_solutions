@@ -37,6 +37,7 @@ export default function Navbar() {
 
   return (
     <nav 
+      aria-label="Primary navigation"
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
         isScrolled 
           ? "bg-clr-warm-white/85 backdrop-blur-md py-3 shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-clr-gold/15" 
@@ -48,6 +49,14 @@ export default function Navbar() {
         {/* Brand Logo - Image Monogram with rendering details to prevent heavy paint delays */}
         <div 
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          role="button"
+          tabIndex={0}
+          aria-label="Go to top of page"
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
           className="flex items-center gap-3 cursor-pointer select-none"
         >
           <img 
@@ -97,6 +106,7 @@ export default function Navbar() {
           {/* Socials / Links actions */}
           <a 
             href="mailto:hello@tarunsolarsolutions.com" 
+            aria-label="Email Tarun Solar Rooftop"
             className={`hidden lg:flex w-9 h-9 rounded-full items-center justify-center transition-transform hover:scale-105 ${
               isScrolled ? "bg-clr-olive text-white" : "bg-white/10 text-white"
             }`}
@@ -110,6 +120,7 @@ export default function Navbar() {
           {/* Consultation Button - hidden on small mobile viewports to prevent hamburger overlap */}
           <button
             onClick={handleWhatsAppRedirect}
+            aria-label="Call or message Tarun Solar Rooftop"
             className="hidden sm:inline-block text-[10px] md:text-xs rounded-full px-5 py-2.5 font-bold uppercase tracking-wider transition-all duration-300 bg-clr-olive text-white hover:bg-clr-olive-dark hover:-translate-y-0.5 hover:shadow-md cursor-pointer"
           >
             Call 7022673119
@@ -118,6 +129,8 @@ export default function Navbar() {
           {/* Mobile Menu Toggle Button */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
             className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full border transition-all cursor-pointer ${
               isScrolled 
                 ? "border-clr-gold/20 text-clr-charcoal bg-black/5" 

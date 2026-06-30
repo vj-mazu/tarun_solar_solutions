@@ -122,6 +122,7 @@ export default function Services() {
                 {/* WhatsApp button */}
                 <button
                   onClick={() => handleWhatsAppInquiry(service.title)}
+                  aria-label={`Inquire about ${service.title}`}
                   className="text-[10px] font-bold uppercase tracking-widest text-clr-gold hover:text-white transition-colors duration-300"
                 >
                   Inquire Package ↗
@@ -140,7 +141,7 @@ export default function Services() {
           <div className="flex flex-wrap justify-center items-center gap-6">
             {/* Tata Plaque */}
             <div className="flex items-center justify-between gap-6 bg-white/[0.02] border border-white/[0.05] px-6 py-4 rounded-[20px] shadow-sm hover:border-clr-gold/20 hover:scale-102 transition-all duration-300 w-[290px] h-[90px]">
-              <img src={tataLogo} alt="Tata Power Solar" className="h-11 w-auto object-contain rounded-md" />
+              <img src={tataLogo} alt="Tata Power Solar" className="h-11 w-auto object-contain rounded-md" loading="lazy" decoding="async" />
               <div className="text-right font-body flex-1 pl-4 border-l border-white/[0.05]">
                 <span className="text-[8px] font-bold text-clr-gold uppercase tracking-wider block leading-none mb-0.5">Authorized</span>
                 <span className="text-white font-extrabold text-xs block leading-tight">TATA POWER</span>
@@ -150,7 +151,7 @@ export default function Services() {
 
             {/* Waaree Plaque */}
             <div className="flex items-center justify-between gap-6 bg-white/[0.02] border border-white/[0.05] px-6 py-4 rounded-[20px] shadow-sm hover:border-clr-gold/20 hover:scale-102 transition-all duration-300 w-[290px] h-[90px]">
-              <img src={waareeLogo} alt="Waaree Solar" className="h-11 w-auto object-contain rounded-md animate-glow" />
+              <img src={waareeLogo} alt="Waaree Solar" className="h-11 w-auto object-contain rounded-md animate-glow" loading="lazy" decoding="async" />
               <div className="text-right font-body flex-1 pl-4 border-l border-white/[0.05]">
                 <span className="text-[8px] font-bold text-clr-gold uppercase tracking-wider block leading-none mb-0.5">Elite Partner</span>
                 <span className="text-[#5d9cec] font-black text-xs block leading-tight">WAAREE</span>

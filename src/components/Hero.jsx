@@ -70,12 +70,16 @@ export default function Hero() {
           <motion.img
             key={imageIndex}
             src={carouselImages[imageIndex]}
-            alt="Tarun Solar Solutions Fittings"
+            alt={imageIndex === 0 ? "Tarun Solar Rooftop solar panel installation" : ""}
+            aria-hidden={imageIndex === 0 ? undefined : "true"}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
             className="absolute inset-0 w-full h-full object-cover"
+            loading={imageIndex === 0 ? "eager" : "lazy"}
+            fetchPriority={imageIndex === 0 ? "high" : "auto"}
+            decoding="async"
           />
         </AnimatePresence>
       </div>
@@ -121,6 +125,7 @@ export default function Hero() {
         <div className="blur-in flex flex-wrap gap-4">
           <button 
             onClick={() => handleWhatsAppRedirect("Residential Fitting Inquiry")}
+            aria-label="Ask about residential solar fitting on WhatsApp"
             className="btn btn-primary bg-clr-olive text-white border-2 border-clr-olive rounded-full text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-clr-olive-dark hover:border-clr-olive-dark hover:-translate-y-1 transition-all duration-300 shadow-md cursor-pointer"
           >
             Residential Fitting
@@ -128,6 +133,7 @@ export default function Hero() {
           
           <button 
             onClick={() => handleWhatsAppRedirect("Commercial Site Audit")}
+            aria-label="Ask about a commercial solar site audit on WhatsApp"
             className="btn btn-outline bg-transparent text-white border-2 border-white/40 rounded-full text-xs font-bold uppercase tracking-widest px-8 py-4 hover:bg-white hover:text-clr-charcoal hover:-translate-y-1 transition-all duration-300 shadow-sm cursor-pointer"
           >
             Commercial Audit

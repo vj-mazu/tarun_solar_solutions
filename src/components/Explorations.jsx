@@ -131,6 +131,13 @@ export default function Explorations() {
               <div
                 key={idx}
                 onClick={() => handleOpenLightbox(item.image, item.title)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    handleOpenLightbox(item.image, item.title);
+                  }
+                }}
                 className="aspect-square w-full rounded-2xl md:rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl cursor-pointer group transition-all duration-500"
                 style={{ transform: `rotate(${item.rotation})` }}
               >
@@ -138,6 +145,8 @@ export default function Explorations() {
                   src={item.image} 
                   alt={item.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
@@ -149,6 +158,13 @@ export default function Explorations() {
               <div
                 key={idx}
                 onClick={() => handleOpenLightbox(item.image, item.title)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    handleOpenLightbox(item.image, item.title);
+                  }
+                }}
                 className="aspect-square w-full rounded-2xl md:rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl cursor-pointer group transition-all duration-500"
                 style={{ transform: `rotate(${item.rotation})` }}
               >
@@ -156,6 +172,8 @@ export default function Explorations() {
                   src={item.image} 
                   alt={item.title} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
@@ -173,6 +191,7 @@ export default function Explorations() {
           <div className="relative max-w-3xl w-full flex flex-col items-center select-none" onClick={(e) => e.stopPropagation()}>
             <button 
               onClick={() => setLightboxImage(null)}
+              aria-label="Close gallery preview"
               className="absolute -top-12 right-0 text-white/60 hover:text-white font-bold text-xs uppercase tracking-widest cursor-pointer"
             >
               CLOSE ✕
@@ -182,6 +201,7 @@ export default function Explorations() {
                 src={lightboxImage} 
                 alt={lightboxTitle} 
                 className="w-full h-full object-cover"
+                decoding="async"
               />
             </div>
             <div className="flex flex-col items-center gap-4">

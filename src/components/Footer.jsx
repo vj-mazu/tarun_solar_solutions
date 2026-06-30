@@ -61,6 +61,8 @@ export default function Footer() {
           src={brandLogo} 
           alt="Tarun Solar Rooftop Logo" 
           className="h-40 md:h-48 w-auto object-contain rounded-2xl mb-6 bg-black/95 px-2 py-2 border border-white/15 shadow-xl"
+          loading="lazy"
+          decoding="async"
         />
 
         {/* Title */}
@@ -128,6 +130,9 @@ export default function Footer() {
               initial={{ scale: 0.9, y: 15 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 15 }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="legal-dialog-title"
               className="bg-white max-w-xl w-full rounded-[28px] p-8 md:p-10 shadow-2xl relative z-10 border border-clr-gold/15 text-left select-text max-h-[85vh] overflow-y-auto"
             >
               <button 
@@ -140,7 +145,7 @@ export default function Footer() {
               {modalType === "privacy" ? (
                 <div>
                   <span className="font-accent text-sm text-clr-gold tracking-widest uppercase block mb-1">Compliance</span>
-                  <h3 className="font-display text-2xl md:text-3xl font-bold text-clr-charcoal mb-6">Privacy Policy</h3>
+                  <h3 id="legal-dialog-title" className="font-display text-2xl md:text-3xl font-bold text-clr-charcoal mb-6">Privacy Policy</h3>
                   <div className="space-y-4 text-xs md:text-sm text-clr-text-light font-body leading-relaxed">
                     <p>
                       At Tarun Solar Rooftop, we respect your privacy. This policy outlines how we collect, handle, and secure information during feasibility audits, grid registrations, and WhatsApp inquiries.
@@ -162,7 +167,7 @@ export default function Footer() {
               ) : (
                 <div>
                   <span className="font-accent text-sm text-clr-gold tracking-widest uppercase block mb-1">Guidelines</span>
-                  <h3 className="font-display text-2xl md:text-3xl font-bold text-clr-charcoal mb-6">Terms of Service</h3>
+                  <h3 id="legal-dialog-title" className="font-display text-2xl md:text-3xl font-bold text-clr-charcoal mb-6">Terms of Service</h3>
                   <div className="space-y-4 text-xs md:text-sm text-clr-text-light font-body leading-relaxed">
                     <p>
                       Welcome to Tarun Solar Rooftop. By reserving a slot or contracting solar fitting operations, you agree to these legal conditions:

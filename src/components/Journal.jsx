@@ -84,6 +84,13 @@ export default function Journal() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
               onClick={() => handleRedirect(article.title)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  handleRedirect(article.title);
+                }
+              }}
               className="flex items-center justify-between gap-4 p-3 md:p-4 rounded-[40px] sm:rounded-full bg-gray-50/50 hover:bg-gray-100/50 border border-gray-100 hover:border-gray-200 transition-all duration-300 cursor-pointer group"
             >
               <div className="flex items-center gap-4 md:gap-6 min-w-0">
@@ -93,6 +100,8 @@ export default function Journal() {
                     src={article.image} 
                     alt={article.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
 

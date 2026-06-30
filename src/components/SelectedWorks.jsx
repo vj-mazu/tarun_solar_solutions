@@ -71,6 +71,7 @@ export default function SelectedWorks() {
 
           <button 
             onClick={() => handleWhatsAppRedirect("All Projects Listing")}
+            aria-label="Ask for all solar project examples"
             className="btn btn-outline border border-clr-gold text-clr-charcoal hover:bg-clr-gold hover:text-white rounded-full text-xs font-semibold px-8 py-3.5 transition-all duration-300 self-start cursor-pointer"
           >
             View all projects ↗
@@ -87,6 +88,13 @@ export default function SelectedWorks() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               onClick={() => setSelectedProject(project)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  setSelectedProject(project);
+                }
+              }}
               className={`${project.span} ${project.aspect} relative bg-clr-cream-dark border border-clr-gold/10 rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-end min-h-[220px] md:min-h-[340px]`}
             >
               {/* Top-Right Glowing Partner Tag Badge */}
@@ -105,6 +113,8 @@ export default function SelectedWorks() {
                 src={project.image} 
                 alt={project.title}
                 className="absolute inset-0 w-full h-full object-cover scale-100 group-hover:scale-105 group-hover:rotate-[0.5deg] transition-transform duration-[1200ms] ease-out"
+                loading="lazy"
+                decoding="async"
               />
 
               {/* Dark Overlay (Ensuring readability underneath the card) */}
@@ -147,6 +157,9 @@ export default function SelectedWorks() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 180 }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="project-dialog-title"
               className="relative bg-clr-warm-white max-w-4xl w-full rounded-3xl overflow-hidden shadow-2xl z-10 flex flex-col md:flex-row border border-clr-gold/15"
             >
               {/* Image Column */}
@@ -155,6 +168,7 @@ export default function SelectedWorks() {
                   src={selectedProject.image} 
                   alt={selectedProject.title} 
                   className="absolute inset-0 w-full h-full object-cover"
+                  decoding="async"
                 />
               </div>
 
@@ -164,7 +178,7 @@ export default function SelectedWorks() {
                   <span className="font-accent text-sm text-clr-gold tracking-widest uppercase block mb-2">
                     {selectedProject.subtitle}
                   </span>
-                  <h3 className="font-display text-3xl font-bold text-clr-charcoal mb-4">
+                  <h3 id="project-dialog-title" className="font-display text-3xl font-bold text-clr-charcoal mb-4">
                     {selectedProject.title}
                   </h3>
                   <p className="text-xs md:text-sm text-clr-text-light leading-relaxed font-body mb-8">
@@ -193,6 +207,7 @@ export default function SelectedWorks() {
               {/* Close Button top-right */}
               <button 
                 onClick={() => setSelectedProject(null)}
+                aria-label="Close project preview"
                 className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center cursor-pointer transition-colors"
               >
                 <X className="w-4 h-4" />

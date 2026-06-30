@@ -1,5 +1,5 @@
 import React from "react";
-import { Zap, Award, Percent, BadgeAlert, CheckCircle, ShieldCheck, Heart, ChevronRight } from "lucide-react";
+import { Zap, Award, Percent, BadgeAlert, CheckCircle, ShieldCheck, ChevronRight } from "lucide-react";
 import { config } from "../config";
 
 export default function SolarServices() {
